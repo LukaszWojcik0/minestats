@@ -4,6 +4,7 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import { log } from "console";
+import WsOutput from "./WsOutput";
 
 type ServerData = {
   online: number;
@@ -22,6 +23,7 @@ export default function ApiOutput() {
   return (
     <QueryClientProvider client={queryClient}>
       <ServerInfo />
+      <WsOutput />
     </QueryClientProvider>
   );
 }
@@ -36,21 +38,30 @@ function ServerInfo() {
 
   if (isPending) return <span>Loading...</span>;
 
-  if (isError) return <span>An error has occurred: + {error.message}</span>;
+  if (isError)
+    return <span>An error with REST API has occurred: {error.message}</span>;
 
   return (
-    <div>
-      <h1>
-        <span>{data.motd}</span>
-      </h1>
-      <h2>
-        {data.address[0]}:{data.address[1]}
-      </h2>
-      <span>
-        Currently playing: {data.online}/{data.max}
-      </span>
-
-      {/* <span>{data.version}</span> */}
-    </div>
+    <>
+      <div>
+        <p>REST API data:</p>
+        <h1>
+          {data.address[0]}:{data.address[1]}
+        </h1>
+        <h2>
+          <span>{data.motd}</span>
+        </h2>
+        <span>
+          Currently playing: {data.online}/{data.max}
+        </span>
+        <p>Ping: {data.ping}</p>
+        <p>
+          Version: {data.version} {data.icon} {}
+        </p>
+      </div>
+      <div>
+        <p>Web Service data:</p>
+      </div>
+    </>
   );
 }
