@@ -78,7 +78,6 @@ export default function WsOutput() {
     <div>
       {Object.entries(data).map(([player, info]) => (
         <div key={player}>
-          <Card>aaa</Card>
           <h3>{player}</h3>
           <p>
             Health: {info.Health} Food: {info.foodLevel}
