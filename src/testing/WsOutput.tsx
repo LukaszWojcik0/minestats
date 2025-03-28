@@ -1,4 +1,12 @@
 // import { error, log } from "console";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useEffect, useState } from "react";
 
 type PlayerData = {
@@ -33,6 +41,7 @@ export default function WsOutput() {
           } else {
             setData(parsed);
             // console.log(parsed);
+
             // console.log("abilities.mayfly:", info.abilities.mayfly);
             // console.log("info.Dimension:", info.Dimension.mayfly);
           }
@@ -69,8 +78,48 @@ export default function WsOutput() {
     <div>
       {Object.entries(data).map(([player, info]) => (
         <div key={player}>
+          <Card>aaa</Card>
           <h3>{player}</h3>
-          <pre>{JSON.stringify(info, null, 2)}</pre>
+          <p>
+            Health: {info.Health} Food: {info.foodLevel}
+          </p>
+          <p>
+            Additional health: {info.AbsorptionAmount} Air: {info.Air}
+          </p>
+          <p>XpTotal: {info.XpTotal}</p>
+          <p>
+            position: x: {Math.round(info.Pos[0])} y: {Math.round(info.Pos[1])}{" "}
+            z: {Math.round(info.Pos[2])}{" "}
+          </p>
+          <p>Dimension: {info.Dimension}</p>
+          <br></br>
+          <p>isFlyingElytra: {info.FallFlying}</p>
+          <p>
+            OnGround: {info.OnGround}
+            {/* {console.log(info["LastDeathLocation.pos"][0])} */}
+            {/* {console.log(info.abilities.mayBuild)} */}
+          </p>
+
+          <p>
+            playerGameType: {info.playerGameType}
+            {/* {console.log(info.LastDeathLocation.pos[0])} */}
+            {/* {console.log(info)} */}
+          </p>
+          <p>
+            LastDeathLocation: x: {Math.round(info["LastDeathLocation.pos"][0])}{" "}
+            y: {Math.round(info["LastDeathLocation.pos"][1])} z:{" "}
+            {Math.round(info["LastDeathLocation.pos"][2])}{" "}
+          </p>
+          <p>
+            LastDeathLocation.dimension: {info["LastDeathLocation.dimension"]}
+          </p>
+          <br></br>
+          <br></br>
+          <br></br>
+          <pre>
+            {/* {JSON.stringify(info, null, 2)} */}
+            {/* {console.log(info.Pos)} */}
+          </pre>
         </div>
       ))}
     </div>

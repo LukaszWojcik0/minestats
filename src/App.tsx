@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import ApiOutput from "./testing/Apioutput";
 import WsOutput from "./testing/WsOutput";
+import "./index.css";
 
 function App() {
   return (
