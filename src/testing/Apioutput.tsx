@@ -4,7 +4,6 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import { log } from "console";
-import WsOutput from "./WsOutput";
 
 type ServerData = {
   online: number;
@@ -23,7 +22,6 @@ export default function ApiOutput() {
   return (
     <QueryClientProvider client={queryClient}>
       <ServerInfo />
-      <WsOutput />
     </QueryClientProvider>
   );
 }
@@ -58,9 +56,6 @@ function ServerInfo() {
         <p>
           Version: {data.version} {data.icon} {}
         </p>
-      </div>
-      <div>
-        <p>Web Service data:</p>
       </div>
     </>
   );
