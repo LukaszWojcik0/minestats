@@ -7,7 +7,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-[url(light-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3">
       <header className="App-header">
         {/* <ApiOutput /> */}
         <WsOutput />
