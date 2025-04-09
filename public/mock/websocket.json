@@ -1,0 +1,64 @@
+{
+    "zajonc": {
+        "Pos": [
+            10.5,
+            79.0,
+            10.5
+        ],
+        "Rotation": [
+            -132.74219,
+            90.0
+        ],
+        "FallFlying": 0,
+        "enteredNetherPosition": "{z: 10.5, x: 8.5, y: 84.0}",
+        "RootVehicle": null,
+        "Health": 20.0,
+        "AbsorptionAmount": 0.0,
+        "foodLevel": 20,
+        "DeathTime": 0,
+        "OnGround": 1,
+        "Air": 300,
+        "XpTotal": 0,
+        "playerGameType": 1,
+        "Dimension": "\"minecrat:the_nether\"",
+        "abilities.flying": 0,
+        "abilities.mayfly": 1,
+        "abilities.mayBuild": 1,
+        "LastDeathLocation.pos": null,
+        "LastDeathLocation.dimension": null,
+        "EnderItems": []
+    },
+    "eldablju": {
+        "Pos": [
+            -1.3558590034272013,
+            75.0,
+            7.123201230631785
+        ],
+        "Rotation": [
+            -141.98438,
+            90.0
+        ],
+        "FallFlying": 0,
+        "enteredNetherPosition": null,
+        "RootVehicle": null,
+        "Health": 15.0,
+        "AbsorptionAmount": 5.0,
+        "foodLevel": 20,
+        "DeathTime": 0,
+        "OnGround": 1,
+        "Air": 300,
+        "XpTotal": 0,
+        "playerGameType": 1,
+        "Dimension": "\"minecrat:overworl\"",
+        "abilities.flying": 0,
+        "abilities.mayfly": 1,
+        "abilities.mayBuild": 1,
+        "LastDeathLocation.pos": [
+            -28,
+            90,
+            150
+        ],
+        "LastDeathLocation.dimension": "\"minecrat:overworl\"",
+        "EnderItems": "[{count: 1, Slot: 0, i: \"minecrat:experience_ottle\"}]"
+    }
+}

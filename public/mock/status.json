@@ -1,0 +1,16 @@
+{
+    "address": [
+        "192.168.0.180",
+        25565
+    ],
+    "icon": null,
+    "max": 20,
+    "motd": "A Minecraft Server",
+    "online": 2,
+    "ping": 17.0,
+    "players": [
+        "zajonc",
+        "eldablju"
+    ],
+    "version": "1.21.1"
+}

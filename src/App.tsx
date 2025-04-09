@@ -1,15 +1,26 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import ApiOutput from "./testing/Apioutput";
 import WsOutput from "./testing/WsOutput";
 import "./index.css";
 
+const mode = "dark";
+
 function App() {
   return (
-    <div className="App bg-[url(light-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3">
-      <header className="App-header">
-        {/* <ApiOutput /> */}
+    <div
+      className={
+        "App bg-[url(" +
+        mode +
+        "-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3 text-white"
+      }
+      // className={
+      //   "App bg-[url(dark-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3"
+      // }
+    >
+      <header className="App-header ">
+        <ApiOutput />
         <WsOutput />
       </header>
     </div>

@@ -30,7 +30,9 @@ function ServerInfo() {
   const { isPending, isError, data, error } = useQuery<ServerData>({
     queryKey: ["serverData"],
     queryFn: (): Promise<ServerData> =>
-      fetch("http://localhost:5000/status").then((res) => res.json()),
+      // fetch("http://localhost:5000/status").then((res) => res.json()),
+      fetch("/mock/status.json").then((res) => res.json()),
+
     refetchInterval: 500,
   });
 
@@ -42,7 +44,7 @@ function ServerInfo() {
   return (
     <>
       <div>
-        <p>REST API data:</p>
+        <p>SERVER API data:</p>
         <h1>
           {data.address[0]}:{data.address[1]}
         </h1>
