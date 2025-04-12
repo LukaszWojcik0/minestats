@@ -13,7 +13,7 @@ function App() {
       className={
         "App bg-[url(" +
         mode +
-        "-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3 text-white"
+        "-mode/background-texture.png)] bg-contain bg-repeat h-screen text-white"
       }
       // className={
       //   "App bg-[url(dark-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3"

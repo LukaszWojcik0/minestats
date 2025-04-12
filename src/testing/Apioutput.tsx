@@ -43,21 +43,33 @@ function ServerInfo() {
 
   return (
     <>
-      <div>
-        <p>SERVER API data:</p>
-        <h1>
-          {data.address[0]}:{data.address[1]}
-        </h1>
-        <h2>
-          <span>{data.motd}</span>
-        </h2>
-        <span>
-          Currently playing: {data.online}/{data.max}
-        </span>
-        <p>Ping: {data.ping}</p>
-        <p>
-          Version: {data.version} {data.icon} {}
-        </p>
+      <div className="w-screen  bg-[url(dark-mode/side-texture3.png)] bg-contain border-b-4  border-[#20150d] mb-10">
+        <div className="flex w-screen p-3">
+          <img
+            src="{data.icon}"
+            alt="data.icon"
+            className="w-[128px] h-[128px]"
+          />
+          <div></div>
+          <div className="flex w-screen ">
+            <div className="w-4/5">
+              <p>
+                {data.address[0]}:{data.address[1]}
+              </p>
+              <p className="w-max mx-auto">{data.motd}</p>
+            </div>
+            <div className="ml-auto">
+              <div className="w-max flex">
+                <p className="mt-auto mx-3">
+                  {data.online}/{data.max}
+                </p>
+                <img src="ping/blank.png" alt="ping" className="w-[32px]" />
+                <p className="mt-auto mx-1">{data.ping} ms</p>
+              </div>
+              <p className="text-center my-1">Version: {data.version}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
