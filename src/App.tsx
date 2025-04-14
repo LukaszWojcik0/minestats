@@ -13,13 +13,13 @@ function App() {
       className={
         "App bg-[url(" +
         mode +
-        "-mode/background-texture.png)] bg-contain bg-repeat h-screen text-white"
+        "-mode/background-texture.png)] bg-contain bg-repeat text-white h-max min-h-screen overflow-hidden font-[MinecraftRegular]"
       }
       // className={
       //   "App bg-[url(dark-mode/background-texture.png)] bg-contain bg-repeat h-screen pt-3"
       // }
     >
-      <header className="App-header ">
+      <header className="App-header">
         <ApiOutput />
         <WsOutput />
       </header>

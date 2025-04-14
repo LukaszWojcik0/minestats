@@ -24,7 +24,6 @@ export default function PlayerDimension({
   }
   // return <img src={path} alt={dimension + " image"} className="w-15" />;
   return (
-    // <div className={"bg-[url(dimension/the_end2.png)] w-full"}>
     <div
       className={
         "bg-[url(" +
@@ -32,10 +31,17 @@ export default function PlayerDimension({
         ")] w-full h-full max-h-24 bg-contain bg-repeat rounded-tr-lg text-center content-center"
       }
     >
+      {/* to refresh images */}
+      {/* <div className={"bg-[url(dimension/the_end2.png)] w-full"}></div>
+      <div className={"bg-[url(dimension/overworld2.png)] w-full"}></div>
+      <div className={"bg-[url(dimension/the_nether2.png)] w-full"}></div> */}
       <p className="font-[MinecraftRegular] text-xl">
+        x: {position[0]} y: {position[1]} z: {position[2]}{" "}
+      </p>
+      {/* <p className="font-[MinecraftRegular] text-xl">
         x: {Math.round(position[0])} y: {Math.round(position[1])} z:{" "}
         {Math.round(position[2])}{" "}
-      </p>
+      </p> */}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
-import { log } from "console";
+import ServerPing from "./ServerPing";
 
 type ServerData = {
   online: number;
@@ -30,8 +30,8 @@ function ServerInfo() {
   const { isPending, isError, data, error } = useQuery<ServerData>({
     queryKey: ["serverData"],
     queryFn: (): Promise<ServerData> =>
-      // fetch("http://localhost:5000/status").then((res) => res.json()),
-      fetch("/mock/status.json").then((res) => res.json()),
+      fetch("http://localhost:5000/status").then((res) => res.json()),
+    // fetch("/mock/status.json").then((res) => res.json()),
 
     refetchInterval: 500,
   });
@@ -43,19 +43,15 @@ function ServerInfo() {
 
   return (
     <>
-      <div className="w-screen  bg-[url(dark-mode/side-texture3.png)] bg-contain border-b-4  border-[#20150d] mb-10">
-        <div className="flex w-screen p-3">
+      <div className="w-full  bg-[url(dark-mode/side-texture3.png)] bg-contain border-b-4  border-[#20150d] mb-10">
+        <div className="flex w-full p-3 ">
           <img
             src="{data.icon}"
             alt="data.icon"
             className="w-[128px] h-[128px]"
           />
-          <div></div>
-          <div className="flex w-screen ">
+          <div className="flex w-full ">
             <div className="w-4/5">
-              <p>
-                {data.address[0]}:{data.address[1]}
-              </p>
               <p className="w-max mx-auto">{data.motd}</p>
             </div>
             <div className="ml-auto">
@@ -63,8 +59,8 @@ function ServerInfo() {
                 <p className="mt-auto mx-3">
                   {data.online}/{data.max}
                 </p>
-                <img src="ping/blank.png" alt="ping" className="w-[32px]" />
-                <p className="mt-auto mx-1">{data.ping} ms</p>
+                <ServerPing ping={data.ping} />
+                <p className="w-16 mt-auto text-center">{data.ping} ms</p>
               </div>
               <p className="text-center my-1">Version: {data.version}</p>
             </div>
