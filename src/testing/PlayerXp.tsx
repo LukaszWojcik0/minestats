@@ -14,6 +14,7 @@ function calculatePercent(percent: number) {
 }
 
 export default function PlayerXp({ xpData }: PlayerXpProps) {
+  console.log(xpData);
   const progressPercent = useMemo(
     () => calculatePercent(xpData.progressPercent),
     [xpData.progressPercent]
@@ -32,7 +33,9 @@ export default function PlayerXp({ xpData }: PlayerXpProps) {
       </div>
       {/* <p>XP do kolejnego poziomu: {xpData.xpToNext}</p>
       <p>Progress: {progressPercent}%</p> */}
-      {/* <div className="h-2 rounded-md bg-green-600 mr-auto w-[1%]"> </div>
+      {/*
+      <>
+      <div className="h-2 rounded-md bg-green-600 mr-auto w-[1%]"> </div>
       <div className="h-2 rounded-md bg-green-600 mr-auto w-[2%]"> </div>
       <div className="h-2 rounded-md bg-green-600 mr-auto w-[3%]"> </div>
       <div className="h-2 rounded-md bg-green-600 mr-auto w-[4%]"> </div>
@@ -121,7 +124,8 @@ export default function PlayerXp({ xpData }: PlayerXpProps) {
       <div className="h-2 rounded-md bg-green-600 mr-auto w-[97%]"> </div>
       <div className="h-2 rounded-md bg-green-600 mr-auto w-[98%]"> </div>
       <div className="h-2 rounded-md bg-green-600 mr-auto w-[99%]"> </div>
-      <div className="h-2 rounded-md bg-green-600 mr-auto w-[100%]"> </div> */}
+      <div className="h-2 rounded-md bg-green-600 mr-auto w-[100%]"> </div> 
+      </>*/}
     </div>
   );
 }

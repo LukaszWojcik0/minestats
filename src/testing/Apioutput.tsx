@@ -40,7 +40,7 @@ function ServerInfo() {
 
   if (isError)
     return <span>An error with REST API has occurred: {error.message}</span>;
-
+  console.log(data);
   return (
     <>
       <div className="w-full  bg-[url(dark-mode/side-texture3.png)] bg-contain border-b-4  border-[#20150d] mb-10">
