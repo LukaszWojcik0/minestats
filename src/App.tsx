@@ -1,9 +1,8 @@
 import React from "react";
 
 import "./App.css";
-import ApiOutput from "./testing/Apioutput";
-import WsOutput from "./testing/WsOutput";
 import "./index.css";
+import WelcomePage from "./testing/WelcomePage";
 
 const mode = "dark";
 
@@ -20,8 +19,7 @@ function App() {
       // }
     >
       <header className="App-header">
-        <ApiOutput />
-        <WsOutput />
+        <WelcomePage />
       </header>
     </div>
   );

@@ -7,7 +7,13 @@ type PlayerData = {
   [player: string]: any;
 };
 
-export default function WsOutput() {
+export default function WsOutput({
+  ip,
+  password,
+}: {
+  ip: string;
+  password: string;
+}) {
   // const [player, setPlayer]= useState<PlayerData | null>(null);
   const [data, setData] = useState<PlayerData | null>(null);
   const [ws, setWs] = useState<WebSocket | null>(null);
@@ -22,6 +28,7 @@ export default function WsOutput() {
       socket = new WebSocket("ws://127.0.0.1:6789/");
 
       socket.onopen = () => {
+        socket.send(JSON.stringify({ host: ip, password: password }));
         console.log("Connected");
       };
 
@@ -64,7 +71,7 @@ export default function WsOutput() {
       console.log("Cleanup");
       socket?.close();
     };
-  }, []);
+  }, [ip, password]);
 
   // Offline
   // useEffect(() => {

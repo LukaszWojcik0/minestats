@@ -14,7 +14,7 @@ function calculatePercent(percent: number) {
 }
 
 export default function PlayerXp({ xpData }: PlayerXpProps) {
-  console.log(xpData);
+  // console.log(xpData);
   const progressPercent = useMemo(
     () => calculatePercent(xpData.progressPercent),
     [xpData.progressPercent]
