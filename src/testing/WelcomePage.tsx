@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ApiOutput from "./Apioutput";
 import WsOutput from "./WsOutput";
 
+// import { toast } from "sonner";
+// import { Toaster } from "@/components/ui/sonner";
+
 export default function WelcomePage() {
   const [ip, setIp] = useState("");
   const [password, setPassword] = useState("");
@@ -41,6 +44,14 @@ export default function WelcomePage() {
 
     ws.onerror = (err) => {
       console.error("WebSocket error:", err);
+      // toast("Whoops", {
+      //   description: "There was something wrong with your request.",
+      //   action: {
+      //     label: "Close",
+      //     onClick: () => Pause,
+      //   },
+      // });
+      // logic for the error pop-up
     };
   };
 
@@ -65,26 +76,27 @@ export default function WelcomePage() {
       <p className="text-center my-4">
         type in your credentials to see your server's details:
       </p>
-      <div className="flex w-4/5  mx-auto ">
-        <form onSubmit={handeSubmit}>
+      <div className=" ">
+        <form onSubmit={handeSubmit} className=" mx-auto w-max">
           <input
             type="text"
             value={ip}
             onChange={(e) => setIp(e.target.value)}
             placeholder="Wpisz IP serwera"
-            className="bg-gray-400 m-2 p-0.5"
+            className="bg-gray-400 p-0.5"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Wpisz hasło do MCRCON"
-            className="bg-gray-400 m-2 p-0.5"
+            className="bg-gray-400 m-3 p-0.5"
           />
-          <button type="submit" className="bg-gray-400 p-0.5">
+          <button type="submit" className="bg-gray-600 p-0.5 px-1.5">
             Send
           </button>
         </form>
+        <>{/* pop-up informing that it's not working */}</>
       </div>
     </div>
   );
