@@ -82,6 +82,7 @@ export default function WsOutput({
 
   if (!data) return <p>Loading...</p>;
 
+  console.log(data);
   return (
     <>
       {data !== null && (

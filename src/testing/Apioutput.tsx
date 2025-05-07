@@ -5,6 +5,7 @@ import {
 } from "@tanstack/react-query";
 import ServerPing from "./ServerPing";
 import ServerMotd from "./ServerMotd";
+import WsOutput from "./WsOutput";
 
 type ServerData = {
   online: number;
@@ -19,15 +20,23 @@ type ServerData = {
 
 const queryClient = new QueryClient();
 
-export default function ApiOutput({ ip }: { ip: string }) {
+export default function ApiOutput({
+  ip,
+  password,
+}: {
+  ip: string;
+  password: string;
+}) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ServerInfo ip={ip} />
-    </QueryClientProvider>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <ServerInfo ip={ip} password={password} />
+      </QueryClientProvider>
+    </>
   );
 }
 
-function ServerInfo({ ip }: { ip: string }) {
+function ServerInfo({ ip, password }: { ip: string; password: string }) {
   const { isPending, isError, data, error } = useQuery<ServerData>({
     queryKey: ["serverData", ip],
     queryFn: () =>
@@ -79,6 +88,12 @@ function ServerInfo({ ip }: { ip: string }) {
           </div>
         </div>
       </div>
+
+      {data.online != 0 && (
+        <>
+          <WsOutput ip={ip} password={password} />
+        </>
+      )}
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ApiOutput from "./Apioutput";
-import WsOutput from "./WsOutput";
+// import WsOutput from "./WsOutput";
 
 // import { toast } from "sonner";
 // import { Toaster } from "@/components/ui/sonner";
@@ -58,8 +58,7 @@ export default function WelcomePage() {
   if (connected) {
     return (
       <>
-        <ApiOutput ip={ip} />
-        <WsOutput ip={ip} password={password} />
+        <ApiOutput ip={ip} password={password} />
       </>
     );
   }
