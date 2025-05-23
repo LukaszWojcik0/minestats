@@ -81,14 +81,14 @@ export default function WelcomePage() {
             type="text"
             value={ip}
             onChange={(e) => setIp(e.target.value)}
-            placeholder="Wpisz IP serwera"
+            placeholder="Server's ip:"
             className="bg-gray-400 p-0.5"
           />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Wpisz hasło do MCRCON"
+            placeholder="MCRCON password:"
             className="bg-gray-400 m-3 p-0.5"
           />
           <button type="submit" className="bg-gray-600 p-0.5 px-1.5">
