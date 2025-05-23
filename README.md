@@ -1,54 +1,18 @@
-# React + TypeScript + Vite
+# [Front+Backend]MineStats - Minecraft statistics web-app 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app helps you track your and your friend's statistics on any server that supports MCRCON.
 
-Currently, two official plugins are available:
+Currently, this app is still **in progress** but already looks well enough to be shared with public.
+Backend still needs some work to be published.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Main features:**
+- Login page
+  ![image](https://github.com/user-attachments/assets/a707fea9-8737-45aa-83ce-b66fbb1b7c19)
+- Live data of the server and connected players
+  ![image](https://github.com/user-attachments/assets/0edfadf1-3f0c-4c69-a1f0-bcaec57a73da)
 
-## Expanding the ESLint configuration
+Plans to expand:
+- Adding a database so that more information can be stored for future statistics
+- Adding a statistics tab for each player so that interesting information can be accesed from the app.
+- Adding a on server integration that makes two above points possible, by reading statistics directly from the saved game
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
